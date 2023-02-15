@@ -5,10 +5,10 @@ import androidx.room.Relation
 
 
 data class VendorWithProductsDataObject(
-    @Embedded val vendorEntity: Vendor,
+    @Embedded val vendorEntity: VendorEntity,
     @Relation(
         parentColumn = "vendorId",
         entityColumn = "belongsToVendor"
     )
-    val product: List<Product>
+    val products: List<ProductEntity>
 )

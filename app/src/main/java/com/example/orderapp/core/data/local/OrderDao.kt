@@ -1,22 +1,22 @@
 package com.example.orderapp.core.data.local
 
 import androidx.room.*
-import com.example.orderapp.core.data.local.entities.Order
-import com.example.orderapp.core.data.local.entities.OrderProduct
+import com.example.orderapp.core.data.local.entities.OrderEntity
+import com.example.orderapp.core.data.local.entities.OrderProductEntity
 import com.example.orderapp.core.data.local.entities.OrderWithProductsDataObject
 
 @Dao
 interface OrderDao {
 
     @Transaction
-    @Query("SELECT * FROM Order")
+    @Query("SELECT * FROM OrderEntity")
     suspend fun getOrderWithProducts(): List<OrderWithProductsDataObject>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertOrder(order: Order)
+    suspend fun insertOrder(orderEntity: OrderEntity)
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertOrderProduct(orderProduct: List<OrderProduct>)
+    suspend fun insertOrderProductEntities(orderProductEntities:List<OrderProductEntity>)
 }
 

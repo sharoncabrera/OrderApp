@@ -2,17 +2,17 @@ package com.example.orderapp.core.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.orderapp.core.data.local.entities.Order
-import com.example.orderapp.core.data.local.entities.OrderProduct
-import com.example.orderapp.core.data.local.entities.Product
-import com.example.orderapp.core.data.local.entities.Vendor
+import com.example.orderapp.core.data.local.entities.OrderEntity
+import com.example.orderapp.core.data.local.entities.OrderProductEntity
+import com.example.orderapp.core.data.local.entities.ProductEntity
+import com.example.orderapp.core.data.local.entities.VendorEntity
 
 @Database(
     entities = [
-        Vendor::class,
-        Order::class,
-        OrderProduct::class,
-        Product::class
+        VendorEntity::class,
+        OrderEntity::class,
+        OrderProductEntity::class,
+        ProductEntity::class
     ],
     version = 1
 )

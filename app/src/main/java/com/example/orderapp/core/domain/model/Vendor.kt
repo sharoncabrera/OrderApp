@@ -1,3 +1,9 @@
 package com.example.orderapp.core.domain.model
 
-data class Vendor()
+import com.example.orderapp.core.domain.SelectAndSortableByName
+
+data class Vendor(
+    val vendorId:String,
+    override val name:String,
+    val products: List<Product>
+): SelectAndSortableByName

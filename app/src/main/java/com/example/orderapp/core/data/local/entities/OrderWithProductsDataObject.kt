@@ -5,16 +5,16 @@ import androidx.room.Junction
 import androidx.room.Relation
 
 data class OrderWithProductsDataObject(
-    @Embedded val order: Order,
+    @Embedded val orderEntity: OrderEntity,
     @Relation(
         parentColumn = "orderId",
         entityColumn = "productId",
-        associateBy = Junction(OrderProduct::class)
+        associateBy = Junction(OrderProductEntity::class)
     )
-    val products: List<Product>,
+    val productEntities: List<ProductEntity>,
     @Relation(
         parentColumn = "orderId",
         entityColumn = "orderId"
     )
-    val orderProduct: List<OrderProduct>
+    val orderProductEntities: List<OrderProductEntity>
 )

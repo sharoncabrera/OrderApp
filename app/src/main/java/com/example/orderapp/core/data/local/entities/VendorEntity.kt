@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity
-data class Vendor (
+data class VendorEntity (
     @PrimaryKey val vendorId: String,
     val name: String
         )
