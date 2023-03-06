@@ -5,6 +5,7 @@ import com.example.orderapp.core.data.local.ProductDao
 import com.example.orderapp.core.data.local.VendorDao
 import com.example.orderapp.order_feature.presentation.data.respository.OrderRepositoryImpl
 import com.example.orderapp.order_feature.presentation.domain.repository.OrderRepository
+import com.example.orderapp.order_feature.presentation.domain.use_case.ConfirmOrderUseCase
 import com.example.orderapp.order_feature.presentation.domain.use_case.FilterListByNameUseCase
 import com.example.orderapp.order_feature.presentation.domain.use_case.SortedListByNameUseCase
 import dagger.Module
@@ -29,13 +30,20 @@ object OrderFeatureModule {
 
     @Provides
     @Singleton
-    fun provideFilterByNameUseCase(): FilterListByNameUseCase{
+    fun provideFilterByNameUseCase(): FilterListByNameUseCase {
         return FilterListByNameUseCase()
     }
 
     @Provides
     @Singleton
-    fun provideSortedByNameUseCase(): SortedListByNameUseCase{
+    fun provideSortedByNameUseCase(): SortedListByNameUseCase {
         return SortedListByNameUseCase()
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideConfirmOrderUseCase(orderRepository: OrderRepository): ConfirmOrderUseCase {
+        return ConfirmOrderUseCase(orderRepository)
     }
 }
