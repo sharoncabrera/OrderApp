@@ -53,7 +53,7 @@ fun ProductUiListItem(
 
                 Text(text = productListItem.name, color = white, fontWeight = FontWeight.Bold)
                 Text(
-                    text = "%.2f".format(productListItem.pricePerAmount) + " $",
+                    text = "%.2f".format(productListItem.pricePerAmount) + " eur",
                     color = white,
                     fontSize = 14.sp
                 )

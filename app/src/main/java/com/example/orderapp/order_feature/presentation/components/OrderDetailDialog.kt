@@ -86,7 +86,7 @@ fun OrderDetailDialog(
                             ) {
                                 Text(text = "${it.selectedAmount}x" + it.name)
 
-                                Text(text = "%.2f".format(it.pricePerAmount * it.selectedAmount) + " $")
+                                Text(text = "%.2f".format(it.pricePerAmount * it.selectedAmount) + " eur")
 
                             }
                         }
